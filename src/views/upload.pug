@@ -1,0 +1,21 @@
+extends base
+
+block content
+    div.upload__container
+        div.upload__video
+            video#preview
+            button#actionBtn.social__btn Strat Recording
+        if errorMessage
+            span=errorMessage
+        form(method="POST",  enctype="multipart/form-data")
+            label(for="video") Video File
+            input(type="file", accept="video/*", required, id="video", name="video")
+            label(for="thumb") Thumbnail File
+            input(type="file", accept="image/*", required, id="thumb", name="thumb")
+            input(name="title", placeholder="Title", type="text", maxlength=80, required )
+            input(name="description", placeholder="Description", type="text", minlength=20, required )
+            input(name="hashtags", placeholder="Hashtags, Separeated by comma.", type="text", required)
+            input(type="submit", value="Upload video" )
+
+block scripts
+    script(src="/static/js/recorder.js")

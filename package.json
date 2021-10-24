@@ -1,0 +1,60 @@
+{
+  "name": "wetube",
+  "version": "1.0.0",
+  "description": "The best way to watch video.",
+  "scripts": {
+    "start": "node build/init.js",
+    "build": "npm run build:server && npm run build:assets",
+    "build:server": "babel src -d build",
+    "build:assets": "webpack --mode=production",
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --mode=development -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baguni2021/wetube-reloaded.git"
+  },
+  "author": "Playweb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/baguni2021/wetube-reloaded/issues"
+  },
+  "homepage": "https://github.com/baguni2021/wetube-reloaded#readme",
+  "dependencies": {
+    "@ffmpeg/core": "^0.8.5",
+    "@ffmpeg/ffmpeg": "^0.9.7",
+    "axios": "^0.21.4",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "crypto-js": "^4.1.1",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.2",
+    "memory-cache": "^0.2.0",
+    "mongoose": "^6.0.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "node-fetch": "^2.6.1",
+    "pug": "^3.0.2",
+    "regenerator-runtime": "^0.13.9",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.4",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.3.0",
+    "mini-css-extract-plugin": "^2.4.1",
+    "nodemon": "^2.0.12",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.57.1",
+    "webpack-cli": "^4.9.0"
+  }
+}
