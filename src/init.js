@@ -6,7 +6,7 @@ import './models/User';
 import './models/Comment';
 import app from './server';
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 const handleListenning = () => console.log(`✅ Server Listening on http://localhost:${PORT} 🚀`);
 // ------- 아래코드로 실행해도 같은 결과 -
