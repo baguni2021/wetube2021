@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 app.set('views', process.cwd() + '/src/views');
 app.use(logger);
 app.use(express.urlencoded({ extended: true })); //
-app.use(express.json()); // 
+app.use(express.json()); //
 
 app.use(
   session({
@@ -36,11 +36,11 @@ app.use(localsMiddleware);
 app.use('/uploads', express.static('uploads'));
 app.use('/static', express.static('assets'), express.static('node_modules/@ffmpeg/core/dist'));
 
-app.use((req, res, next) => {
-  res.header('Cross-Origin-Embedder-Policy', 'require-corp');
-  res.header('Cross-Origin-Opener-Policy', 'same-origin');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Cross-Origin-Embedder-Policy', 'require-corp');
+//   res.header('Cross-Origin-Opener-Policy', 'same-origin');
+//   next();
+// });
 
 app.use('/', rootRouter);
 app.use('/users', userRouter);
